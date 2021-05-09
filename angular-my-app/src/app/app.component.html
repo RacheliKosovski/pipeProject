@@ -1,0 +1,9 @@
+<div>
+  <ul>
+    <li *ngFor="let intermediary of intermediaries|slice:1:3; let i = index">
+      <app-intermediary (click)="setEdit(i)" [intermediaries]="intermediaries" [i]="i">
+      </app-intermediary>
+    </li>
+  </ul>
+  <app-edit-intermediary *ngIf="-1 != currentEdit" [currentEdit]="intermediaries[currentEdit]"></app-edit-intermediary>
+</div>
